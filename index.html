@@ -267,6 +267,7 @@
             </div>
         </div>
     </section>
+
     <!-- Banners -->
     <section class="container mx-auto px-40 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -299,247 +300,357 @@
     <!-- Featured Products -->
     <section class="container mx-auto px-40 py-16">
         <h2 class="text-4xl text-center mb-12 text-gray-800">Featured Products</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- Product Card 1 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
-                <div class="relative h-48">
-                    <img src="assets/1.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        Featured
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="relative">
+            <!-- Left Arrow -->
+            <button id="slideLeft" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-12 bg-[#9C755E] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:bg-[#7B5C4A] transition-all z-10">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-            <!-- Product Card 2 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.2s]">
-                <div class="relative h-48">
-                    <img src="assets/2.jpeg" alt="Luxury Hamper" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        Best Seller
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Luxury Hamper</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Elegant hamper with gourmet treats.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="ml-2 text-gray-600 text-sm">(5.0)</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$249.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <!-- Right Arrow -->
+            <button id="slideRight" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-12 bg-[#9C755E] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:bg-[#7B5C4A] transition-all z-10">
+                <i class="fas fa-chevron-right"></i>
+            </button>
 
-            <!-- Product Card 3 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.4s]">
-                <div class="relative h-48">
-                    <img src="assets/3.jpeg" alt="Executive Gift Set" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        New Arrival
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Executive Gift Set</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Premium leather accessories set.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+            <!-- Products Container -->
+            <div class="overflow-hidden">
+                <div id="productsSlider" class="flex gap-6 transition-transform duration-500 ease-out">
+                    <!-- Product Card 1 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
+                        <div class="relative h-48">
+                            <img src="assets/1.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Featured
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600 text-sm">(4.0)</span>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$179.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product Card 4 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.6s]">
-                <div class="relative h-48">
-                    <img src="assets/4.jpeg" alt="Wellness Package" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        Popular
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Wellness Package</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Curated wellness and self-care items.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                    <!-- Product Card 2 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.2s]">
+                        <div class="relative h-48">
+                            <img src="assets/2.jpeg" alt="Luxury Hamper" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Best Seller
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$159.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Product Card 5 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
-                <div class="relative h-48">
-                    <img src="assets/5.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        Featured
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Luxury Hamper</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Elegant hamper with gourmet treats.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(5.0)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$249.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product Card 6 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.2s]">
-                <div class="relative h-48">
-                    <img src="assets/6.jpeg" alt="Luxury Hamper" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        Best Seller
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Luxury Hamper</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Elegant hamper with gourmet treats.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <!-- Product Card 3 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.4s]">
+                        <div class="relative h-48">
+                            <img src="assets/3.jpeg" alt="Executive Gift Set" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                New Arrival
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600 text-sm">(5.0)</span>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Executive Gift Set</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Premium leather accessories set.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.0)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$179.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$249.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product Card 7 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.4s]">
-                <div class="relative h-48">
-                    <img src="assets/7.jpeg" alt="Executive Gift Set" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        New Arrival
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Executive Gift Set</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Premium leather accessories set.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                    <!-- Product Card 4 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.6s]">
+                        <div class="relative h-48">
+                            <img src="assets/4.jpeg" alt="Wellness Package" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Popular
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600 text-sm">(4.0)</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$179.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Card 8 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in_0.6s]">
-                <div class="relative h-48">
-                    <img src="assets/8.jpeg" alt="Wellness Package" class="w-full h-full object-cover">
-                    <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
-                        Popular
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-1">Wellness Package</h3>
-                    <p class="text-gray-600 mb-3 text-sm">Curated wellness and self-care items.</p>
-                    <div class="flex items-center mb-3">
-                        <div class="flex text-[#9C755E] text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Wellness Package</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Curated wellness and self-care items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$159.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
-                        <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-[#9C755E]">$159.99</span>
-                        <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
-                            Add to Cart
-                        </button>
+                    <!-- Product Card 5 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
+                        <div class="relative h-48">
+                            <img src="assets/5.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Product Card 6 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
+                        <div class="relative h-48">
+                            <img src="assets/6.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 7 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
+                        <div class="relative h-48">
+                            <img src="assets/7.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 8 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
+                        <div class="relative h-48">
+                            <img src="assets/8.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 9 -->
+                    <div class="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 animate-[fadeIn_0.6s_ease-in]">
+                        <div class="relative h-48">
+                            <img src="assets/9.jpeg" alt="Premium Gift Box" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-2 py-1 rounded-full text-xs">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Premium Gift Box</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Luxurious gift box with handpicked premium items.</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-[#9C755E] text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(4.5)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-[#9C755E]">$199.99</span>
+                                <button class="bg-[#9C755E] text-white px-4 py-1.5 rounded-full hover:bg-[#7B5C4A] transition-all duration-300 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional Product Cards 5-8 with same structure -->
+                    <!-- ... -->
+                    
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('productsSlider');
+            const slideLeftBtn = document.getElementById('slideLeft');
+            const slideRightBtn = document.getElementById('slideRight');
+            
+            let scrollAmount = 0;
+            const slideStep = 300; // Width of one product card
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+            // Add smooth scrolling behavior
+            slider.style.scrollBehavior = 'smooth';
+
+            slideLeftBtn.addEventListener('click', () => {
+                scrollAmount = Math.max(scrollAmount - slideStep, 0);
+                slider.style.transform = `translateX(-${scrollAmount}px)`;
+                updateButtonStates();
+            });
+
+            slideRightBtn.addEventListener('click', () => {
+                scrollAmount = Math.min(scrollAmount + slideStep, maxScroll);
+                slider.style.transform = `translateX(-${scrollAmount}px)`;
+                updateButtonStates();
+            });
+
+            // Update button states based on scroll position
+            function updateButtonStates() {
+                slideLeftBtn.style.opacity = scrollAmount === 0 ? '0.5' : '1';
+                slideRightBtn.style.opacity = scrollAmount >= maxScroll ? '0.5' : '1';
+            }
+
+            // Initialize button states
+            updateButtonStates();
+
+            // Add touch swipe functionality
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            slider.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            slider.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe left
+                        slideRightBtn.click();
+                    } else {
+                        // Swipe right
+                        slideLeftBtn.click();
+                    }
+                }
+            }
+        });
+    </script>
+    
     <!-- Why Choose Us Section -->
     <section class="bg-[#FAF7F0] py-16">
         <div class="container mx-auto px-4 md:px-40">
@@ -584,32 +695,184 @@
         </div>
     </section>
 
+    <!-- Most Popular Products -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-40">
+            <h2 class="text-4xl text-center mb-12 text-gray-800">Most Popular Products</h2>
+            
+            <div class="relative">
+                <!-- Navigation Arrows -->
+                <button id="popularPrevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-12 bg-[#9C755E] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:bg-[#7B5C4A] transition-all z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="popularNextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-12 bg-[#9C755E] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:bg-[#7B5C4A] transition-all z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Products Slider -->
+                <div class="overflow-hidden">
+                    <div id="popularProductsSlider" class="flex gap-8 transition-transform duration-500">
+                        <!-- Product 1 -->
+                        <div class="min-w-[280px] w-[280px] animate-[fadeIn_0.6s_ease-in]">
+                            <div class="relative h-[280px] mb-4 overflow-hidden group">
+                                <img src="assets/1.jpeg" alt="Popular Product" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-3 py-1 rounded-full text-sm">
+                                    Best Seller
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Luxury Gift Set</h3>
+                            <p class="text-sm text-gray-600 mb-2">Handcrafted premium wooden collection box</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-[#9C755E]">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(128)</span>
+                            </div>
+                            <p class="text-[#9C755E] font-bold">$149.99</p>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="min-w-[280px] w-[280px] animate-[fadeIn_0.6s_ease-in_0.2s]">
+                            <div class="relative h-[280px] mb-4 overflow-hidden group">
+                                <img src="assets/2.jpeg" alt="Popular Product" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-3 py-1 rounded-full text-sm">
+                                    Top Rated
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Premium Wine Box</h3>
+                            <p class="text-sm text-gray-600 mb-2">Vintage wine with chocolate pairing</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-[#9C755E]">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(95)</span>
+                            </div>
+                            <p class="text-[#9C755E] font-bold">$199.99</p>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="min-w-[280px] w-[280px] animate-[fadeIn_0.6s_ease-in_0.4s]">
+                            <div class="relative h-[280px] mb-4 overflow-hidden group">
+                                <img src="assets/3.jpeg" alt="Popular Product" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-3 py-1 rounded-full text-sm">
+                                    New Arrival
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Gourmet Hamper</h3>
+                            <p class="text-sm text-gray-600 mb-2">Artisanal treats and delicacies</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-[#9C755E]">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(74)</span>
+                            </div>
+                            <p class="text-[#9C755E] font-bold">$179.99</p>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="min-w-[280px] w-[280px] animate-[fadeIn_0.6s_ease-in_0.6s]">
+                            <div class="relative h-[280px] mb-4 overflow-hidden group">
+                                <img src="assets/4.jpeg" alt="Popular Product" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                                <div class="absolute top-3 right-3 bg-[#9C755E] text-white px-3 py-1 rounded-full text-sm">
+                                    Limited Edition
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Deluxe Gift Box</h3>
+                            <p class="text-sm text-gray-600 mb-2">Luxury spa and wellness kit</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-[#9C755E]">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">(156)</span>
+                            </div>
+                            <p class="text-[#9C755E] font-bold">$229.99</p>
+                        </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+
     <!-- Our Clientele Section -->
     <section class="py-16">
         <div class="container mx-auto px-4 md:px-40">
             <h2 class="text-4xl text-center mb-12 text-gray-800">Our Corporate Gifting Clientele</h2>
             <div class="relative overflow-hidden">
                 <!-- Logo Slider Container -->
-                <div class="flex animate-[scroll_20s_linear_infinite] space-x-12">
+                <div id="logoSlider" class="flex space-x-12">
                     <!-- Logo Group 1 -->
-                    <div class="flex space-x-12 items-center">
-                        <img src="assets/client-logo1.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo2.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo3.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo4.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo5.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo6.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                    <div class="flex-shrink-0 flex space-x-12 items-center">
+                        <img src="assets/client1.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client2.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client3.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client4.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client5.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client6.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
                     </div>
                     <!-- Logo Group 2 (Duplicate for seamless loop) -->
-                    <div class="flex space-x-12 items-center">
-                        <img src="assets/client-logo1.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo2.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo3.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo4.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo5.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="assets/client-logo6.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                    <div class="flex-shrink-0 flex space-x-12 items-center">
+                        <img src="assets/client1.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client2.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client3.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client4.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client5.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client6.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <!-- Logo Group 3 (Duplicate for seamless loop) -->
+                    <div class="flex-shrink-0 flex space-x-12 items-center">
+                        <img src="assets/client1.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client2.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client3.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client4.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client5.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/client6.png" alt="Client Logo" class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
                     </div>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const slider = document.getElementById('logoSlider');
+                        const firstGroup = slider.children[0];
+                        let position = 0;
+                        const speed = 1; // Adjust speed as needed
+                        
+                        function animate() {
+                            position -= speed;
+                            
+                            // When first group is fully scrolled, reset position
+                            if (-position >= firstGroup.offsetWidth) {
+                                position = 0;
+                            }
+                            
+                            // Apply transform with hardware acceleration
+                            slider.style.transform = `translate3d(${position}px, 0, 0)`;
+                            requestAnimationFrame(animate);
+                        }
+                        
+                        // Start animation
+                        animate();
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -633,7 +896,7 @@
                 <!-- Testimonial 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/client1.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/quote.jpeg" alt="Client" class="w-12 h-12 rounded-full object-cover">
                         <div class="ml-4">
                             <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
                             <p class="text-gray-600 text-sm">Marketing Director, TechCorp</p>
@@ -645,7 +908,7 @@
                 <!-- Testimonial 2 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/client2.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/quote.jpeg" alt="Client" class="w-12 h-12 rounded-full object-cover">
                         <div class="ml-4">
                             <h4 class="font-bold text-gray-800">Michael Chen</h4>
                             <p class="text-gray-600 text-sm">CEO, Innovation Labs</p>
@@ -657,7 +920,7 @@
                 <!-- Testimonial 3 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/client3.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+                        <img src="assets/quote.jpeg" alt="Client" class="w-12 h-12 rounded-full object-cover">
                         <div class="ml-4">
                             <h4 class="font-bold text-gray-800">Emma Davis</h4>
                             <p class="text-gray-600 text-sm">HR Manager, Global Inc</p>
@@ -815,16 +1078,16 @@
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2024 GiftBox. All rights reserved.</p>
                     <div class="flex space-x-4">
-                        <img src="assets/payment-visa.png" alt="Visa" class="h-8">
-                        <img src="assets/payment-mastercard.png" alt="Mastercard" class="h-8">
-                        <img src="assets/payment-amex.png" alt="American Express" class="h-8">
-                        <img src="assets/payment-paypal.png" alt="PayPal" class="h-8">
+                        <img src="assets/visa.png" alt="Visa" class="h-8">
+                        <img src="assets/mastercard.png" alt="Mastercard" class="h-8">
+                        <img src="assets/upi.png" alt="American Express" class="h-8">
+                        <img src="assets/applepay.png" alt="PayPal" class="h-8">
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- JavaScript for Carousel -->
+    <!-- JavaScript for Carousel & logos -->
     <script>
        
     </script>
